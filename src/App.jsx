@@ -11,7 +11,7 @@ function App() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('https://course-api.com/react-tours-project');
+      const response = await fetch('https://api.allorigins.win/raw?url=https://course-api.com/react-tours-project');
       if (!response.ok) {
         throw new Error('Failed to fetch tours');
       }
@@ -39,13 +39,19 @@ function App() {
   if (tours.length === 0) {
     return (
       <div>
-        <h1>No tours left</h1>
+        <h1>Tour Gallery</h1>
+        <h2>No tours left</h2>
         <button onClick={fetchTours}>Refresh</button>
       </div>
     );
   }
 
-  return <Gallery tours={tours} setTours={setTours} />;
+  return (
+    <div>
+      <h1>Tour Gallery</h1>
+      <Gallery tours={tours} setTours={setTours} />
+    </div>
+  );
 }
 
 export default App;
