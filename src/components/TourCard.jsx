@@ -1,4 +1,5 @@
-import './TourCard.css';
+import '../App.css';
+import TourCard from './TourCard';
 
 function TourCard({ tour, removeTour }) {
   const { id, name, info, image, price } = tour;
